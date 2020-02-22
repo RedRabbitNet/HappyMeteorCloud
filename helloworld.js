@@ -24,11 +24,10 @@ handlers.getTableCall = function (args, context) {
 
 // This is a simple example of making a PlayFab server API call
 handlers.itemToUser = function (args, context) {
-    var ids = new Array(args.ResultItemId);
     var request = {
         // Annotation: "GachaPresent",
         // CatalogVersion: "Character",
-        ItemIds: ids,
+        ItemIds: args.ResultItemId,
         PlayFabId: currentPlayerId,
     };
 
