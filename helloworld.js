@@ -14,11 +14,12 @@ handlers.helloWorld = function (args, context) {
 // This is a simple example of making a PlayFab server API call
 handlers.getTableCall = function (args, context) {
     var request = {
-        CatalogVersion: "Character", TableId: "CharacterGacha"
+        CatalogVersion: "Character",
+        TableId: "CharacterGacha"
     };
 
     var result = server.EvaluateRandomResultTable(request);
-    return result.ResultItemId;
+    return result;
 };
 
 // This is a simple example of making a PlayFab server API call
