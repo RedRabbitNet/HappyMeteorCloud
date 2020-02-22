@@ -34,3 +34,22 @@ handlers.itemToUser = function (args, context) {
     var result = server.GrantItemsToUser(request);
     return result;
 };
+
+handlers.gachaOneCall = function (args, context){
+    var evaluateRequest = {
+        CatalogVersion: "Character",
+        TableId: "CharacterGacha"
+    };
+
+    var evaluateResult = server.EvaluateRandomResultTable(evaluateRequest);
+
+    var grantRequest = {
+        // Annotation: "GachaPresent",
+        // CatalogVersion: "Character",
+        ItemIds: evaluateResult.ResultItemId,
+        PlayFabId: currentPlayerId,
+    };
+
+    var grantResult = server.GrantItemsToUser(grantRequest);
+    return grantResult;
+}
