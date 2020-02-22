@@ -27,7 +27,7 @@ handlers.itemToUser = function (args, context) {
     var request = {
         // Annotation: "GachaPresent",
         // CatalogVersion: "Character",
-        ItemIds: args.ResultItemId,
+        ItemIds: args.itemIds,
         PlayFabId: currentPlayerId,
     };
 
